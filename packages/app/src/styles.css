@@ -1,6 +1,6 @@
 /* Pulls.io brand palette — BUI (Backstage UI) CSS variable overrides */
 
-[data-theme-mode='light'] {
+[data-theme-mode="light"] {
   --bui-bg-app: #f5f5f5;
   --bui-bg-neutral-1: #ffffff;
   --bui-bg-neutral-2: #f0f0f0;
@@ -18,7 +18,7 @@
   --bui-border-2: #999;
 }
 
-[data-theme-mode='dark'] {
+[data-theme-mode="dark"] {
   --bui-bg-app: #111827;
   --bui-bg-neutral-1: #1f2937;
   --bui-bg-neutral-2: #374151;

@@ -26,6 +26,15 @@
     }
   },
   "files": {
-    "includes": ["**", "!node_modules", "!dist", "!dist-types", "!coverage", "!.yarn"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!dist",
+      "!dist-types",
+      "!coverage",
+      "!.yarn",
+      "!examples",
+      "!packages/app/public"
+    ]
   }
 }

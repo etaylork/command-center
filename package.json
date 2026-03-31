@@ -19,7 +19,7 @@
     "fix": "backstage-cli repo fix",
     "lint": "biome lint .",
     "lint:staged": "biome lint",
-    "format": "biome format --write=false .",
+    "format": "biome format .",
     "format:staged": "biome format --write",
     "typecheck": "tsc --noEmit",
     "new": "backstage-cli new",
