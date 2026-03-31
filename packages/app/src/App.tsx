@@ -1,4 +1,9 @@
 import { Navigate, Route } from 'react-router-dom';
+import { UnifiedThemeProvider } from '@backstage/theme';
+import LightIcon from '@material-ui/icons/WbSunny';
+import DarkIcon from '@material-ui/icons/Brightness2';
+import { lightTheme, darkTheme } from './themes';
+import './styles.css';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -40,6 +45,26 @@ import { SignalsDisplay } from '@backstage/plugin-signals';
 
 const app = createApp({
   apis,
+  themes: [
+    {
+      id: 'pulls-light',
+      title: 'Pulls Light',
+      variant: 'light',
+      icon: <LightIcon />,
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={lightTheme} children={children} />
+      ),
+    },
+    {
+      id: 'pulls-dark',
+      title: 'Pulls Dark',
+      variant: 'dark',
+      icon: <DarkIcon />,
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={darkTheme} children={children} />
+      ),
+    },
+  ],
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
