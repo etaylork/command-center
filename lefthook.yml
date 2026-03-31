@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs}"
+      run: yarn lint:staged {staged_files}
+      stage_fixed: true
+
+    format:
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs,json}"
+      run: yarn format:staged {staged_files}
+      stage_fixed: true
+
+    typecheck:
+      glob: "*.{ts,tsx}"
+      run: yarn tsc --noEmit

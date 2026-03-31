@@ -17,10 +17,13 @@
     "test:all": "backstage-cli repo test --coverage",
     "test:e2e": "playwright test",
     "fix": "backstage-cli repo fix",
-    "lint": "backstage-cli repo lint --since origin/master",
-    "lint:all": "backstage-cli repo lint",
-    "prettier:check": "prettier --check .",
-    "new": "backstage-cli new"
+    "lint": "biome lint .",
+    "lint:staged": "biome lint",
+    "format": "biome format .",
+    "format:staged": "biome format --write",
+    "typecheck": "tsc --noEmit",
+    "new": "backstage-cli new",
+    "prepare": "lefthook install"
   },
   "workspaces": {
     "packages": [
@@ -31,11 +34,13 @@
   "devDependencies": {
     "@backstage/cli": "^0.35.4",
     "@backstage/e2e-test-utils": "^0.1.2",
+    "@biomejs/biome": "^2.4.10",
     "@jest/environment-jsdom-abstract": "^30.0.0",
     "@playwright/test": "^1.32.3",
     "@types/jest": "^30.0.0",
     "jest": "^30.2.0",
     "jsdom": "^27.1.0",
+    "lefthook": "^2.1.4",
     "node-gyp": "^10.0.0",
     "prettier": "^2.3.2",
     "typescript": "~5.8.0"
@@ -45,14 +50,5 @@
     "@types/react-dom": "^18"
   },
   "prettier": "@backstage/cli/config/prettier",
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md}": [
-      "prettier --write"
-    ]
-  },
   "packageManager": "yarn@4.4.1"
 }
