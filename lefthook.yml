@@ -1,14 +1,14 @@
 pre-commit:
   parallel: true
   commands:
-    biome-lint:
+    lint:
       glob: "*.{js,jsx,ts,tsx,mjs,cjs}"
-      run: yarn biome lint --apply {staged_files}
+      run: yarn lint:staged {staged_files}
       stage_fixed: true
 
-    biome-format:
+    format:
       glob: "*.{js,jsx,ts,tsx,mjs,cjs,json}"
-      run: yarn biome format --write {staged_files}
+      run: yarn format:staged {staged_files}
       stage_fixed: true
 
     typecheck:
